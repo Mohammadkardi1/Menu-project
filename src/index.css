@@ -1,13 +1,117 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --brand-color: #B45B35;
+  --white-color: #F8F8F8;
+  --black-color: #7F7F7F;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.body {
+  background-color: #FFFFFF;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
+
+.font {
+  font-family: 'Almarai', sans-serif;
+}
+
+.brand-color {
+  color: var(--brand-color);
+}
+
+.title {
+  color: #224F61;
+}
+
+
+/* Start NavBar Component  */
+.navbar-logo {
+  padding-bottom: 6px ;
+  padding-left: 6px;
+  padding-right: 6px;
+  color: var(--brand-color);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.btn-search {
+  background-color: var(--white-color);
+  border-radius: 3px solid #B45B35;
+  border-radius: 8px;
+  color: var(--brand-color)
+}
+
+.btn-search:hover {
+  color: var(--white-color);
+  background-color: var(--brand-color);
+  border-radius: 3px solid var(--white-color);
+  border-radius: 8px;
+}
+/* End NavBar Component  */
+
+
+
+
+/* Start Header Component */
+.underline {
+  height: 4px;
+  width: 200px;
+  background-color: var(--brand-color);
+}
+/* End Header Component */
+
+
+
+/* Start Category Component */
+.btn-category { 
+  color: var(--black-color); 
+  font-size: 20px;
+  background-color: #FFFFFF;
+  border: 2px solid var(--brand-color);
+  border-radius: 4px;
+  padding: 8px;
+  font-weight: bold;
+}
+.btn-category:hover {
+  background-color: var(--brand-color);
+  color: white;
+  border-radius: 15px;
+}
+/* End Category Component */
+
+
+
+/* Start CardItem Component */
+.item-card {
+  cursor: pointer;
+  background-color: red;
+}
+
+.img-card{
+  /* height: 180px;
+  width: 252px; */
+  border-radius: 5px;
+}
+
+.title-card {
+  font-size: 30px;
+}
+
+.price-card {
+  color: var(--brand-color);
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.text-card {
+  font-size: 20px;
+  line-height: 25px;
+  height:100px;
+  overflow: auto;
+
+}
+
+
+/* End CardItem Component */

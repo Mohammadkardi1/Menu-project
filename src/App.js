@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from "react-bootstrap";
+import { Category } from "./Components/Category";
+import { Header } from "./Components/Header";
+import {NavBar} from "./Components/NavBar";
+import { NewCardItem } from "./Components/CardItem";
+import { data } from "./Components/Data";
+import { useState } from "react";
+
+
 
 function App() {
+  const [itemsData, setItemsData ] = useState(data)
+
+  const allCategories =["الكل", ...new Set(data.map((item) => item.category))]
+
+
+  // Filter by category 
+  const FilterByCategory = (cat) => {
+    if (cat === "الكل") {
+      setItemsData(data)
+    } else {
+      const newArr = data.filter((item) => item.category === cat )
+      setItemsData(newArr)
+    }
+  }
+
+
+  const FilterBySearch = (word) => {
+    if (word !== "") {
+      const newArr = data.filter((item) => item.title === word)
+      setItemsData(newArr)
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="font body">
+      <NavBar FilterBySearch={FilterBySearch} />
+      <Container>
+        <Header/>
+        <Category FilterByCategory={FilterByCategory} allCategories={allCategories}/>
+        <NewCardItem itemsData ={itemsData}/>
+      </Container>
     </div>
   );
 }
